@@ -1,0 +1,15 @@
+version: '2'
+services:
+  couchbase:
+    restart: always
+    image: couchbase:community
+    container_name: couchbase
+    ports:
+      - "8091-8094:8091-8094"
+      - "11207:11207"
+      - "11211:11211"
+      - "11210:11210"
+      - "18091-18093:18091-18093"
+    volumes:
+      - /opt/couchbase/var:/opt/couchbase/var
+    network_mode: host
